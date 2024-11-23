@@ -16,21 +16,21 @@ class FamilyStructure:
         # example list of members
         self._members = [
             {
-                'id': self._generateId(),
+             'id': self._generateId(),
              'first_name':'Jhon',
              'last_name':self.last_name,
              'age':'33',
              'luky':[7, 13, 22],
              },
              {
-                 'id': self._generateId(),
+             'id': self._generateId(),
              'first_name':'Jane',
              'last_name':self.last_name,
              'age':'35',
              'luky':[10, 14, 3],
              },
              {
-                 'id': self._generateId(),
+             'id': self._generateId(),
              'first_name':'Jimmy',
              'last_name':self.last_name,
              'age':'5',
@@ -47,14 +47,18 @@ class FamilyStructure:
         return self._members
 
     def delete_member(self, id):
-        # fill this method and update the return
-        pass
+        for position in range(len(self._members)):
+            if self._members[position]["id"] == id:
+                self._members.pop(position)
+                
+                return None
 
-#    def get_member(self, id):
-#        for member in self._members:
-#            if member ["id"]== int(id):
-#                return member
-#        return None
+    def get_member(self, id):
+        for member in self._members:
+            if member["id"] == int(id):
+                return member
+            
+        return None
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
